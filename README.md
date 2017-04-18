@@ -12,7 +12,7 @@ Open the file [/DropItCode/src/DropIt.Mobile.Droid/Properties/AndroidManifest.xm
 <meta-data android:name="com.google.android.geo.API_KEY" android:value="INSERT_MAPS_API_KEY_HERE" />
 ```
 # Windows UWP
-Open the file [DropItCode/src/DropIt.Mobile.Uwp/App.xaml.cs](https://github.com/rherlt/XamarinLovesAzure/DropItCode/src/DropIt.Mobile.Uwp/App.xaml.cs). Insert your Google Maps API Key: 
+Open the file [DropItCode/src/DropIt.Mobile.Uwp/App.xaml.cs](https://github.com/rherlt/XamarinLovesAzure/DropItCode/src/DropIt.Mobile.Uwp/App.xaml.cs). Insert your Bing Maps API Key: 
 ```csharp
  FormsMaps.Init("INSERT_MAPS_API_KEY_HERE");
 ```
