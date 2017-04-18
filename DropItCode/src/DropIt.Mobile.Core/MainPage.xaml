@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:controls="clr-namespace:DropIt.Mobile.Core;assembly=DropIt.Mobile.Core" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             xmlns:map="clr-namespace:DropIt.Mobile.Core.Map;assembly=DropIt.Mobile.Core"
+             x:Class="DropIt.Mobile.Core.MainPage">
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" />
+	</ContentPage.Padding>
+	<Grid Margin="0,0,0,0">
+        <map:CustomMap x:Name="CurrentMap" CustomPins="{Binding DropPins}" InfoWindowClicked="{Binding InfoWindowClickedCommand}" IsShowingUser="{Binding IsShowingUserLocation}" MapType="Street" VerticalOptions="FillAndExpand" />
+		<Frame Padding="5" VerticalOptions="Start" BackgroundColor="#00B9AE">
+			<Grid>
+                <Button x:Name="AddDrop" Image="plusicon.png" Margin="5, 0, 0, 0" HorizontalOptions="Start" BackgroundColor="Transparent" BorderColor="Transparent" Command="{Binding AddDropCommand}" />
+				<Image Source="dropit.png" HeightRequest="35" Margin="10" HorizontalOptions="Center" />
+                <Button x:Name="ShowSettings" Image="list.png" Margin="0, 0, 5, 0" HorizontalOptions="End" BackgroundColor="Transparent" BorderColor="Transparent" Command="{Binding ShowOwnDropsCommand}"/>
+			</Grid>
+		</Frame>
+	</Grid>
+</ContentPage>

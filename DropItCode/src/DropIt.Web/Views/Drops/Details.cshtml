@@ -1,0 +1,72 @@
+@model DropIt.Web.Models.Drop
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Drop</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatorId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CreatorId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Lon)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Lon)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Lat)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Lat)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Alt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Alt)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ValidTo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ValidTo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsValidForever)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsValidForever)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Message)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Message)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

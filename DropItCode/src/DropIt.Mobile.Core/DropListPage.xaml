@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DropIt.Mobile.Core.DropListPage">
+	<ContentPage.Content>
+		<!-- HasUnevenRows ="true" is needed to change row height according to the length of content-->
+		<ListView x:Name="DropListsView" HasUnevenRows="true" ItemsSource="{Binding Drops}">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<ViewCell.ContextActions>
+                            <MenuItem Clicked="OnDelete" Text="Delete" IsDestructive="True" />
+						</ViewCell.ContextActions>
+						<StackLayout Orientation="Vertical" Padding="10">
+							<StackLayout Orientation="Horizontal">
+								<Label Text="{Binding Title}" FontAttributes="Bold"/>
+								<Label Text="{Binding Date}" FontSize="Small" FontAttributes="Bold" />
+							</StackLayout>
+							<Label Text="{Binding Message}" FontSize="Small" />
+						</StackLayout>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</ContentPage.Content>
+</ContentPage>

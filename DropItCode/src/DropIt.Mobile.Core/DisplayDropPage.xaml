@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DropIt.Mobile.Core.DisplayDropPage">
+	<ContentPage.Content>
+		<ScrollView>
+			<ScrollView.Content>
+				<StackLayout Margin="10">
+					<Label x:Name="DropTitle" FontAttributes="Bold" HorizontalTextAlignment="Center" Text="{Binding Title}"/>
+					<Label x:Name="Date" FontSize="Small" Margin="0, 10, 0, 0" Text="{Binding Date}"/>
+					<Label x:Name="DropMessage" Text="{Binding Message}"/>
+				</StackLayout>
+			</ScrollView.Content>
+		</ScrollView>
+	</ContentPage.Content>
+</ContentPage>

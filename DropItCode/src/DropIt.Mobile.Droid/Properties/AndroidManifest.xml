@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0.0" package="DropIt.Mobile.Droid">
+	<uses-sdk android:minSdkVersion="23" android:targetSdkVersion="23" />
+	<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+	<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<application android:icon="@drawable/icon1" android:label="DropIt">
+		<meta-data android:name="com.google.android.geo.API_KEY" android:value="INSERT_MAPS_API_KEY_HERE" />
+	</application>
+</manifest>

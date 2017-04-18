@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:core="clr-namespace:DropIt.Mobile.Core;assembly=DropIt.Mobile.Core" x:Class="DropIt.Mobile.Core.MenuPage">
+	<MasterDetailPage.Master>
+		<ContentPage Title="Settings">
+			<Grid>
+				<BoxView Color="#375D81" />
+				<StackLayout>
+					<Label Margin="0,20,0,0" Text="Here I am" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" FontSize="Large" />
+					<StackLayout Orientation="Horizontal" Margin="20,10,10,0">
+						<Image Source="artwork-source-48.png" VerticalOptions="Center" />
+						<Label Text="SETTINGS" TextColor="White" FontAttributes="Bold" Margin="40,0,0,0" VerticalOptions="Center" />
+					</StackLayout>
+					
+					<!--draw a white line as a separator between menu items-->
+					<StackLayout Margin="10,0,10,0" HeightRequest="1" BackgroundColor="White" HorizontalOptions="FillAndExpand" />
+					<Label Margin="10,10,10,0" Text="Mobile Id:" TextColor="White" />
+					<Entry Margin="10,0,10,0" x:Name="MobileIdEntry" Text="{}{0D5D806D-0855-4287-B6A0-964C33D2E371}" FontSize="Small" TextChanged="MobileIdTextChanged" />
+
+					<!--draw a white line as a separator between menu items-->
+					<StackLayout Margin="10,10,10,0" HeightRequest="1" BackgroundColor="White" HorizontalOptions="FillAndExpand" />
+					<Grid Padding="10,10,10,0">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition />
+							<ColumnDefinition />
+							<ColumnDefinition />
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition />
+							<RowDefinition />
+						</Grid.RowDefinitions>
+						<Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Update position automatically" TextColor="White" />
+						<Switch Grid.Row="0" Grid.Column="2" x:Name="UpdatePositionSwitch" IsToggled="true" HorizontalOptions="End" Toggled="UpdatePositionSwitchToggled" />
+						<Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="Show notifications" TextColor="White" />
+						<Switch Grid.Row="1" Grid.Column="2" x:Name="ShowNotificationsSwitch" IsToggled="true" HorizontalOptions="End" Toggled="ShowNotificationsSwitchToggled" />
+					</Grid>
+					<Button Margin="40,0,40,0" Text="Update manually" TextColor="White" BorderColor="White" BorderWidth="1" />
+					<!--Command="{Binding UpdatePositionCommand}"-->
+				</StackLayout>
+			</Grid>
+		</ContentPage>
+	</MasterDetailPage.Master>
+	<MasterDetailPage.Detail>
+		<core:MobilePage />
+	</MasterDetailPage.Detail>
+</MasterDetailPage>

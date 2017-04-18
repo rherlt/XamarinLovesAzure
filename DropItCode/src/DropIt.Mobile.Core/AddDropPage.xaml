@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:DropIt.Mobile.Core.Converters;assembly=DropIt.Mobile.Core"
+             x:Class="DropIt.Mobile.Core.AddDropPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:InverseBoolConverter x:Key="InverseBoolConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+		<ScrollView>
+			<ScrollView.Content>
+				<StackLayout Margin="10">
+					<Label Text="Add a new drop" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+					<Label Text="Drop title" Margin="0, 10, 0, 0" FontSize="Small" />
+					<Entry x:Name="DropTitle" Placeholder="Enter a title" FontSize="Small" Text="{Binding Title, Mode=TwoWay}"/>
+					<Label x:Name="Date" Text="Date:" FontSize="Small" Margin="0, 10, 0, 0" />
+					<StackLayout Orientation="Horizontal" Margin="0, 10, 0, 0">
+						<Label Text="Should this drop be always valid?" FontSize="Small" />
+                        <Switch x:Name="IsValidForeverSwitch" IsToggled="{Binding IsValidForever, Mode=TwoWay}" HorizontalOptions="EndAndExpand" />
+					</StackLayout>
+                    <Label x:Name="ValidUntilLabel" Text="This drop is valid until:" FontSize="Small" Margin="0, 10, 0, 0" IsVisible="{Binding IsValidForever, Converter={StaticResource InverseBoolConverter}}" />
+                    <DatePicker x:Name="ValidUntilDatePicker" Date="{Binding ValidTo, Mode=TwoWay}" IsVisible="{Binding IsValidForever, Converter={StaticResource InverseBoolConverter}}"/>
+					<Label Text="Drop your message here!" Margin="0, 10, 0, 0" FontSize="Small" />
+                    <Editor x:Name="DropMessage" HeightRequest="160" BackgroundColor="#E8E8EE" Text="{Binding Message, Mode=TwoWay}">
+					</Editor>
+					<Button Text="Add a new Drop" Command="{Binding CreateDropCommand}" />
+				</StackLayout>
+			</ScrollView.Content>
+		</ScrollView>
+	</ContentPage.Content>
+</ContentPage>
